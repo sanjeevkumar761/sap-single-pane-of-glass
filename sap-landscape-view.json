@@ -1,0 +1,254 @@
+{
+  "version": "Notebook/1.0",
+  "items": [
+    {
+      "type": 9,
+      "content": {
+        "version": "KqlParameterItem/1.0",
+        "parameters": [
+          {
+            "id": "a94b69f9-76f5-43c6-8ac4-d17bb87aadbb",
+            "version": "KqlParameterItem/1.0",
+            "name": "Tier",
+            "type": 2,
+            "isRequired": true,
+            "query": "{\"version\":\"1.0.0\",\"content\":\"[{\\r\\n\\t\\\"value\\\": \\\"development\\\"\\r\\n},\\r\\n{\\r\\n\\t\\\"value\\\": \\\"qualiy\\\"\\r\\n}\\r\\n]\",\"transformers\":null}",
+            "value": "development",
+            "typeSettings": {
+              "additionalResourceOptions": []
+            },
+            "timeContext": {
+              "durationMs": 86400000
+            },
+            "queryType": 8
+          }
+        ],
+        "style": "pills",
+        "queryType": 8
+      },
+      "name": "parameters - 1"
+    },
+    {
+      "type": 9,
+      "content": {
+        "version": "KqlParameterItem/1.0",
+        "crossComponentResources": [
+          "value::all"
+        ],
+        "parameters": [
+          {
+            "id": "0c3ebced-e91f-4e5c-90bc-5d59ef2628b5",
+            "version": "KqlParameterItem/1.0",
+            "name": "sapsid",
+            "label": "SAP SID",
+            "type": 2,
+            "value": "S40",
+            "typeSettings": {
+              "additionalResourceOptions": []
+            },
+            "jsonData": "[\r\n    {\r\n            \"value\": \"S40\"\r\n    }\r\n]",
+            "timeContext": {
+              "durationMs": 86400000
+            }
+          }
+        ],
+        "style": "pills",
+        "queryType": 1,
+        "resourceType": "microsoft.resourcegraph/resources"
+      },
+      "name": "parameters - 0"
+    },
+    {
+      "type": 9,
+      "content": {
+        "version": "KqlParameterItem/1.0",
+        "crossComponentResources": [
+          "/subscriptions/bf44c08e-5fa3-4f73-987c-3a51f2d22b00/resourceGroups/deltestnewhrg/providers/Microsoft.Compute/virtualMachines/pas",
+          "/subscriptions/bf44c08e-5fa3-4f73-987c-3a51f2d22b00/resourceGroups/deltestnewhrg/providers/Microsoft.Compute/virtualMachines/pas"
+        ],
+        "parameters": [
+          {
+            "id": "021033bd-ca10-4540-82fe-f7e58368912a",
+            "version": "KqlParameterItem/1.0",
+            "name": "VirtualMachines",
+            "type": 5,
+            "isRequired": true,
+            "multiSelect": true,
+            "quote": "'",
+            "delimiter": ",",
+            "query": "where tags.appsid=~'{sapsid}' and type =~ 'microsoft.compute/virtualmachines'",
+            "crossComponentResources": [
+              "/subscriptions/bf44c08e-5fa3-4f73-987c-3a51f2d22b00/resourceGroups/deltestnewhrg/providers/Microsoft.Compute/virtualMachines/pas",
+              "/subscriptions/bf44c08e-5fa3-4f73-987c-3a51f2d22b00/resourceGroups/deltestnewhrg/providers/Microsoft.Compute/virtualMachines/pas"
+            ],
+            "typeSettings": {
+              "resourceTypeFilter": {
+                "microsoft.compute/virtualmachines": true
+              },
+              "additionalResourceOptions": []
+            },
+            "timeContext": {
+              "durationMs": 86400000
+            },
+            "queryType": 1,
+            "resourceType": "microsoft.resourcegraph/resources"
+          }
+        ],
+        "style": "pills",
+        "queryType": 1,
+        "resourceType": "microsoft.resourcegraph/resources"
+      },
+      "name": "parameters - 4"
+    },
+    {
+      "type": 10,
+      "content": {
+        "chartId": "workbook590a1d99-4b77-4ffd-96df-edcb0ad10f0b",
+        "version": "MetricsItem/2.0",
+        "size": 0,
+        "chartType": 2,
+        "metricScope": 0,
+        "resourceIds": [
+          "{VirtualMachines}"
+        ],
+        "timeContext": {
+          "durationMs": 14400000
+        },
+        "resourceType": "microsoft.compute/virtualmachines",
+        "resourceParameter": "VirtualMachines",
+        "metrics": [
+          {
+            "namespace": "microsoft.compute/virtualmachines",
+            "metric": "microsoft.compute/virtualmachines--Percentage CPU",
+            "aggregation": 4,
+            "splitBy": null
+          }
+        ],
+        "title": "CPU Utilization HANA, PAS",
+        "gridSettings": {
+          "formatters": [
+            {
+              "columnMatch": "Subscription",
+              "formatter": 5
+            },
+            {
+              "columnMatch": "Name",
+              "formatter": 13,
+              "formatOptions": {
+                "linkTarget": "Resource"
+              }
+            },
+            {
+              "columnMatch": "microsoft.compute/virtualmachines--Outbound Flows Timeline",
+              "formatter": 5
+            },
+            {
+              "columnMatch": "microsoft.compute/virtualmachines--Outbound Flows",
+              "formatter": 1,
+              "numberFormat": {
+                "unit": 0,
+                "options": null
+              }
+            },
+            {
+              "columnMatch": "microsoft.compute/virtualmachines--Percentage CPU Timeline",
+              "formatter": 5
+            },
+            {
+              "columnMatch": "microsoft.compute/virtualmachines--Percentage CPU",
+              "formatter": 1,
+              "numberFormat": {
+                "unit": 1,
+                "options": null
+              }
+            }
+          ],
+          "rowLimit": 10000,
+          "labelSettings": [
+            {
+              "columnId": "microsoft.compute/virtualmachines--Percentage CPU",
+              "label": "Percentage CPU (Sum)"
+            },
+            {
+              "columnId": "microsoft.compute/virtualmachines--Percentage CPU Timeline",
+              "label": "Percentage CPU Timeline"
+            }
+          ]
+        }
+      },
+      "name": "metric - 3"
+    },
+    {
+      "type": 9,
+      "content": {
+        "version": "KqlParameterItem/1.0",
+        "parameters": [
+          {
+            "id": "678402a7-3101-4d2c-b0a2-4100f82de0dd",
+            "version": "KqlParameterItem/1.0",
+            "name": "VirtualMachinesHana",
+            "type": 5,
+            "multiSelect": true,
+            "quote": "'",
+            "delimiter": ",",
+            "query": "where tags.workloadtype=~'hanadb' and type =~ 'microsoft.compute/virtualmachines'",
+            "isHiddenWhenLocked": true,
+            "typeSettings": {
+              "additionalResourceOptions": []
+            },
+            "timeContext": {
+              "durationMs": 86400000
+            },
+            "queryType": 1,
+            "resourceType": "microsoft.compute/virtualmachines"
+          }
+        ],
+        "style": "pills",
+        "queryType": 0,
+        "resourceType": "microsoft.resourcegraph/resources"
+      },
+      "name": "parameters - 5"
+    },
+    {
+      "type": 10,
+      "content": {
+        "chartId": "workbook51e5a8c2-93c4-4007-91d1-d1154a45f98e",
+        "version": "MetricsItem/2.0",
+        "size": 0,
+        "chartType": 2,
+        "metricScope": 0,
+        "resourceIds": [
+          "{VirtualMachinesHana}"
+        ],
+        "timeContext": {
+          "durationMs": 3600000
+        },
+        "resourceType": "microsoft.compute/virtualmachines",
+        "resourceParameter": "VirtualMachinesHana",
+        "metrics": [
+          {
+            "namespace": "microsoft.compute/virtualmachines",
+            "metric": "microsoft.compute/virtualmachines--Percentage CPU",
+            "aggregation": 4,
+            "splitBy": null
+          }
+        ],
+        "title": "CPU Utilization HANA",
+        "gridSettings": {
+          "rowLimit": 10000
+        }
+      },
+      "customWidth": "50",
+      "name": "metric - 6"
+    }
+  ],
+  "defaultResourceIds": [
+    "/subscriptions/bf44c08e-5fa3-4f73-987c-3a51f2d22b00/resourceGroups/deltestnewhrg/providers/Microsoft.Compute/virtualMachines/pas",
+    "/subscriptions/bf44c08e-5fa3-4f73-987c-3a51f2d22b00/resourceGroups/deltestnewhrg/providers/Microsoft.Compute/virtualMachines/pas"
+  ],
+  "fallbackResourceIds": [
+    "/subscriptions/bf44c08e-5fa3-4f73-987c-3a51f2d22b00/resourceGroups/deltestnewhrg/providers/Microsoft.Compute/virtualMachines/pas",
+    "/subscriptions/bf44c08e-5fa3-4f73-987c-3a51f2d22b00/resourceGroups/deltestnewhrg/providers/Microsoft.Compute/virtualMachines/pas"
+  ],
+  "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+}
