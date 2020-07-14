@@ -1,2 +1,2 @@
 # sap-single-pane-of-glass
-Provides
+Provides example Azure workbooks to setup a single pane of glass for monitoring SAP landscapes.
