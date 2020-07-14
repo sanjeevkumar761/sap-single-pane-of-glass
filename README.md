@@ -6,7 +6,7 @@ tier=development
 workloadtype=appserver or hanadb
 appsid=<SAP SID>
 
-First example is a workbook which allows to select SAP SID and monitors key performance metrics for SAP App Servers and HANA DB.
+First example is a workbook https://raw.githubusercontent.com/sanjeevkumar761/sap-single-pane-of-glass/master/sap-landscape-view.json which allows to select SAP SID and monitors key performance metrics for SAP App Servers and HANA DB.
 
 
 # Disclaimer
