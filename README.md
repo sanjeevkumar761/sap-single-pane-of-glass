@@ -1,9 +1,12 @@
 # Single pane of glass for SAP on Azure
 Provides example Azure workbooks to setup a single pane of glass for monitoring SAP landscapes.
 
+It makes use of tags and currently uses following tags, which need to be SAP app servers and HANA VMs.  
+tier=development
+workloadtype=appserver or hanadb
+appsid=<SAP SID>
 
-
-
+First example is a workbook which allows to select SAP SID and monitors key performance metrics for SAP App Servers and HANA DB.
 
 
 # Disclaimer
